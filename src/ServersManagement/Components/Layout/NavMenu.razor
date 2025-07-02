@@ -1,6 +1,12 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">ServersManagement</a>
+        <a class="navbar-brand d-flex align-items-center" href="">
+            <i class="bi bi-cpu-fill me-2 fs-4"></i>
+            <div>
+                <div class="fw-bold">ServerHub</div>
+                <small class="text-light opacity-75">Management Portal</small>
+            </div>
+        </a>
     </div>
 </div>
 
@@ -8,21 +14,59 @@
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="nav flex-column">
+        <div class="nav-section-header">
+            <small class="text-light opacity-75 fw-semibold px-3 py-2">MAIN MENU</small>
+        </div>
+        
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            <NavLink class="nav-link d-flex align-items-center" href="" Match="NavLinkMatch.All">
+                <i class="bi bi-house-door-fill me-3"></i>
+                <span>Dashboard</span>
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link d-flex align-items-center" href="servers">
+                <i class="bi bi-hdd-stack-fill me-3"></i>
+                <span>Servers</span>
+                <span class="badge bg-primary ms-auto">6</span>
+            </NavLink>
+        </div>
+
+        <div class="nav-section-header mt-3">
+            <small class="text-light opacity-75 fw-semibold px-3 py-2">MONITORING</small>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link d-flex align-items-center" href="weather">
+                <i class="bi bi-graph-up me-3"></i>
+                <span>Analytics</span>
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="servers">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Servers
+            <NavLink class="nav-link d-flex align-items-center" href="/logs">
+                <i class="bi bi-journal-text me-3"></i>
+                <span>System Logs</span>
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link d-flex align-items-center" href="/alerts">
+                <i class="bi bi-bell-fill me-3"></i>
+                <span>Alerts</span>
+                <span class="badge bg-warning text-dark ms-auto">2</span>
+            </NavLink>
+        </div>
+
+        <div class="nav-section-header mt-3">
+            <small class="text-light opacity-75 fw-semibold px-3 py-2">SETTINGS</small>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link d-flex align-items-center" href="/settings">
+                <i class="bi bi-gear-fill me-3"></i>
+                <span>Configuration</span>
             </NavLink>
         </div>
     </nav>
