@@ -1,7 +1,50 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Server Management Dashboard</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="hero-section text-center py-5 mb-5"
+    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px;">
+    <div class="text-white">
+        <h1 class="display-4 fw-bold mb-3">Server Management Dashboard</h1>
+        <p class="lead mb-4">A Blazor-powered dashboard for seamless server management</p>
+        <a href="/servers" class="btn btn-light btn-lg">
+            <i class="bi bi-server me-2"></i>View Servers
+        </a>
+    </div>
+</div>
 
-Welcome to your new app.
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+                <div class="bg-success rounded-circle p-3 d-inline-flex mb-3">
+                    <i class="bi bi-server text-white fs-2"></i>
+                </div>
+                <h5 class="card-title">Server Monitoring</h5>
+                <p class="card-text text-muted">Real-time server status and performance monitoring</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+                <div class="bg-primary rounded-circle p-3 d-inline-flex mb-3">
+                    <i class="bi bi-gear text-white fs-2"></i>
+                </div>
+                <h5 class="card-title">Management Tools</h5>
+                <p class="card-text text-muted">Comprehensive server configuration and management</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+                <div class="bg-info rounded-circle p-3 d-inline-flex mb-3">
+                    <i class="bi bi-graph-up text-white fs-2"></i>
+                </div>
+                <h5 class="card-title">Analytics</h5>
+                <p class="card-text text-muted">Performance insights and detailed analytics</p>
+            </div>
+        </div>
+    </div>
+</div>
