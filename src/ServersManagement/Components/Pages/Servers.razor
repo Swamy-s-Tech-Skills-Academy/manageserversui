@@ -1,0 +1,44 @@
+﻿@page "/servers"
+@using ServersManagement.Models
+
+<PageTitle>Server Management</PageTitle>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="text-primary mb-1">Server Management</h2>
+        <p class="text-muted">Monitor and manage your server infrastructure</p>
+    </div>
+    <button class="btn btn-primary">
+        <i class="bi bi-plus-circle me-2"></i>Add Server
+    </button>
+</div>
+
+<div class="row">
+    @foreach (var server in servers)
+    {
+        <div class="col-lg-6 col-xl-4">
+            <ServerComponent ServerData="@server" />
+        </div>
+    }
+</div>
+
+@if (!servers.Any())
+{
+    <div class="text-center py-5">
+        <i class="bi bi-server display-1 text-muted"></i>
+        <h4 class="text-muted mt-3">No servers configured</h4>
+        <p class="text-muted">Add your first server to get started</p>
+    </div>
+}
+
+@code {
+    private List<Server> servers = new()
+{
+new Server { Name = "Web Server 01", City = "New York", IsOnline = true },
+new Server { Name = "Database Server", City = "London", IsOnline = true },
+new Server { Name = "API Gateway", City = "Tokyo", IsOnline = false },
+new Server { Name = "Cache Server", City = "Sydney", IsOnline = true },
+new Server { Name = "File Server", City = "Toronto", IsOnline = true },
+new Server { Name = "Mail Server", City = "Mumbai", IsOnline = false }
+};
+}
