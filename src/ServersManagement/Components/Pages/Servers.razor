@@ -1,5 +1,4 @@
 ﻿@page "/servers"
-@using ServersManagement.Models
 
 <PageTitle>Server Management</PageTitle>
 
@@ -32,13 +31,10 @@
 }
 
 @code {
-    private List<Server> servers = new()
-{
-new Server { Name = "Web Server 01", City = "New York", IsOnline = true },
-new Server { Name = "Database Server", City = "London", IsOnline = true },
-new Server { Name = "API Gateway", City = "Tokyo", IsOnline = false },
-new Server { Name = "Cache Server", City = "Sydney", IsOnline = true },
-new Server { Name = "File Server", City = "Toronto", IsOnline = true },
-new Server { Name = "Mail Server", City = "Mumbai", IsOnline = false }
-};
+    private List<Server> servers = new();
+
+    protected override void OnInitialized()
+    {
+        servers = ServersRepository.GetServers();
+    }
 }
