@@ -4,7 +4,7 @@ namespace ServersManagement.Repositories;
 
 public static class ServersRepository
 {
-    private static List<Server> servers = new()
+    private static readonly List<Server> servers = new()
     {
         new() { ServerId = 1, Name = "Server1", City = "Toronto" },
         new() { ServerId = 2, Name = "Server2", City = "Toronto" },
