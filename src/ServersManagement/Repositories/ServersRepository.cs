@@ -82,4 +82,14 @@ public static class ServersRepository
             .Where(s => s.Name != null && s.Name.Contains(serverFilter, StringComparison.OrdinalIgnoreCase))
             .ToList();
     }
+
+    public static List<string> GetDistinctCities()
+    {
+        return servers
+            .Where(s => !string.IsNullOrEmpty(s.City))
+            .Select(s => s.City!)
+            .Distinct()
+            .OrderBy(city => city)
+            .ToList();
+    }
 }

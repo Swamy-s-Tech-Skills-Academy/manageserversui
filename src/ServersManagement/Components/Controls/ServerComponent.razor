@@ -1,45 +1,68 @@
 ﻿@using ServersManagement.Models
 
-<!-- @serverStatus | @server.Name is implicit razor syntax/expression -->
-<!-- @(server.IsOnline ? "bg-success" : "bg-danger") is explicit razor syntax/expression -->
+<!-- Modern server card with soft colors and elegant design -->
 
-<div class="card shadow-sm border-0 mb-3">
-    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-        <h5 class="card-title mb-0">
-            <i class="bi bi-server me-2"></i>@server.Name
-        </h5>
-        <span class="badge @(server.IsOnline ? "bg-success" : "bg-danger")">
-            @(server.IsOnline ? "ONLINE" : "OFFLINE")
-        </span>
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-geo-alt-fill text-muted me-2"></i>
-                    <strong>Location:</strong>
-                    <span class="ms-2">@server.City</span>
+<div class="card server-card shadow-sm border-0 mb-3">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="card-title mb-0 d-flex align-items-center">
+            <div class="server-icon me-3">
+                <i class="bi bi-server"></i>
+            </div>
+            <div>
+                <div class="server-name">@server.Name</div>
+                <div class="server-location">
+                    <i class="bi bi-geo-alt me-1"></i>@server.City
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-activity text-muted me-2"></i>
-                    <strong>Status:</strong>
-                    <span class="ms-2 @(server.IsOnline ? "text-success" : "text-danger")">
-                        @(server.IsOnline ? "Online" : "Offline")
-                    </span>
+        </h5>
+        <div class="status-indicator @(server.IsOnline ? "online" : "offline")">
+            <div class="status-dot"></div>
+            <span class="status-text">@(server.IsOnline ? "Online" : "Offline")</span>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="server-stats mb-3">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="bi bi-cpu"></i>
+                </div>
+                <div class="stat-info">
+                    <div class="stat-label">CPU</div>
+                    <div class="stat-value">@(server.IsOnline ? "45%" : "N/A")</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="bi bi-memory"></i>
+                </div>
+                <div class="stat-info">
+                    <div class="stat-label">Memory</div>
+                    <div class="stat-value">@(server.IsOnline ? "68%" : "N/A")</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="bi bi-hdd"></i>
+                </div>
+                <div class="stat-info">
+                    <div class="stat-label">Storage</div>
+                    <div class="stat-value">@(server.IsOnline ? "32%" : "N/A")</div>
                 </div>
             </div>
         </div>
-        <div class="mt-3">
-            <button class="btn btn-outline-primary btn-sm me-2">
-                <i class="bi bi-gear me-1"></i>Manage
+
+        <div class="action-buttons">
+            <button class="btn btn-action btn-primary-soft">
+                <i class="bi bi-gear"></i>
+                <span>Manage</span>
             </button>
-            <button class="btn btn-outline-secondary btn-sm me-2">
-                <i class="bi bi-graph-up me-1"></i>Monitor
+            <button class="btn btn-action btn-success-soft">
+                <i class="bi bi-graph-up"></i>
+                <span>Monitor</span>
             </button>
-            <button class="btn btn-outline-info btn-sm">
-                <i class="bi bi-info-circle me-1"></i>Details
+            <button class="btn btn-action btn-info-soft">
+                <i class="bi bi-info-circle"></i>
+                <span>Details</span>
             </button>
         </div>
     </div>
